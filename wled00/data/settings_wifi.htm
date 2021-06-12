@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+	<meta name="viewport" content="width=500">
+	<title>Cài Đặt WiFi</title>
+	<script>
+		function H()
+		{
+			window.open("https://github.com/Aircoookie/WLED/wiki/Settings#wifi-settings");
+		}
+		function B()
+		{
+			window.open("/settings","_self");
+		}
+		function GetV()
+		{
+			//values injected by server while sending HTML
+		}
+	</script>
+	<style>
+		@import url("style.css");
+	</style>
+</head>
+<body onload="GetV()">
+	<form id="form_s" name="Sf" method="post">
+		<div class="helpB"><button type="button" onclick="H()">?</button></div>
+		<button type="button" onclick="B()">Trở Lại</button><button type="submit">Lưu & Kết Nối</button><hr>
+		<h2>Thiết Lập WiFi</h2>
+		<h3>Kết nối với mạng hiện có</h3>
+		Tên Mạng (SSID, trống để không kết nối): <br><input name="CS" maxlength="32"><br>
+		Mật Khẩu Mạng: <br> <input type="password" name="CP" maxlength="63"><br>
+		Static IP (leave at 0.0.0.0 for DHCP):<br>
+		<input name="I0" type="number" min="0" max="255" required> .
+		<input name="I1" type="number" min="0" max="255" required> .
+		<input name="I2" type="number" min="0" max="255" required> .
+		<input name="I3" type="number" min="0" max="255" required><br>
+		Static gateway:<br>
+		<input name="G0" type="number" min="0" max="255" required> .
+		<input name="G1" type="number" min="0" max="255" required> .
+		<input name="G2" type="number" min="0" max="255" required> .
+		<input name="G3" type="number" min="0" max="255" required><br>
+		Static subnet mask:<br>
+		<input name="S0" type="number" min="0" max="255" required> .
+		<input name="S1" type="number" min="0" max="255" required> .
+		<input name="S2" type="number" min="0" max="255" required> .
+		<input name="S3" type="number" min="0" max="255" required><br>
+		mDNS address (để trống không có mDNS):<br/>
+		http:// <input name="CM" maxlength="32"> .local<br>
+		IP Máy Khách: <span class="sip"> Không kết nối </span> <br>
+		<h3>Định cấu hình Điểm truy cập</h3>
+		AP SSID (để trống nếu không có AP):<br> <input name="AS" maxlength="32"><br>
+		Ẩn Tên AP: <input type="checkbox" name="AH"><br>
+		Mật khẩu AP (để trống khi mở):<br> <input type="password" name="AP" maxlength="63" pattern="(.{8,63})|()" title="Empty or min. 8 characters"><br>
+		Kênh WiFi của điểm truy cập: <input name="AC" type="number" min="1" max="13" required><br>
+    Mở AP:
+    <select name="AB">
+    <option value="0">Không có kết nối sau khi khởi động</option>
+    <option value="1">Đã Ngắt Kết Nối</option>
+    <option value="2">Luôn Luôn</option>
+    <option value="3">Không bao giờ (không khuyến khích)</option></select><br>
+		AP IP: <span class="sip"> Không Hoạt Động </span><br>
+		<h3>Experimental</h3>
+		Tắt chế độ ngủ của WiFi: <input type="checkbox" name="WS"><br>
+		<i>Có thể trợ giúp về các vấn đề kết nối.<br>
+    Không bật nếu WiFi đang hoạt động bình thường, làm tăng điện năng tiêu thụ.</i>
+    <div id="ethd">
+		<h3>Ethernet Type</h3>
+		<select name="ETH">
+		<option value="0">None</option>
+    <option value="2">ESP32-POE</option>
+    <option value="4">QuinLED-ESP32</option>
+    <option value="3">WESP32</option>
+		<option value="1">WT32-ETH01</option>
+    </select><br><br></div>
+		<hr>
+		<button type="button" onclick="B()">Trở Lại</button><button type="submit">Lưu & Kết Nối</button>
+	</form>
+</body>
+</html>
