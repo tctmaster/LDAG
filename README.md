@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="/images/wled_logo_akemi.png">
+  <img src="/images/wled_logo_akemi2.png">
   </p>
   
 # Welcome to my project WLED! ✨
